@@ -1,0 +1,23 @@
+@model Mission07_Keeney.Models.Movie
+
+@{
+    ViewData["Title"] = "Delete Movie";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center text-danger">Delete Movie</h2>
+
+    <div class="alert alert-warning text-center">
+        <h4>Are you sure you want to delete this movie?</h4>
+        <p><strong>Title:</strong> @Model.Title</p>
+        <p><strong>Year:</strong> @Model.Year</p>
+        <p><strong>Edited:</strong> @(Model.Edited ? "Yes" : "No")</p>
+        <p><strong>Copied to Plex:</strong> @(Model.CopiedToPlex ? "Yes" : "No")</p>
+    </div>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="MovieId" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
