@@ -209,3 +209,4 @@
 /Users/bckben/RiderProjects/Mission07_Keeney/Mission07_Keeney/obj/Debug/net9.0/Mission07_Keeney.pdb
 /Users/bckben/RiderProjects/Mission07_Keeney/Mission07_Keeney/obj/Debug/net9.0/Mission07_Keeney.genruntimeconfig.cache
 /Users/bckben/RiderProjects/Mission07_Keeney/Mission07_Keeney/obj/Debug/net9.0/ref/Mission07_Keeney.dll
+/Users/bckben/RiderProjects/Mission07_Keeney/Mission07_Keeney/obj/Debug/net9.0/Mission07_Keeney.sourcelink.json

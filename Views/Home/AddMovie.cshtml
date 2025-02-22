@@ -8,54 +8,70 @@
     <h2 class="text-center">Add a New Movie</h2>
 
     <form asp-action="AddMovie" method="post" class="border p-4 shadow-sm rounded bg-light">
+
+        <!-- Category Dropdown -->
         <div class="mb-3">
-            <label asp-for="Title" class="form-label fw-bold"></label>
+            <label asp-for="CategoryId" class="form-label fw-bold">Category</label>
+            <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"))">
+                <option value="">None</option>  <!-- Allows users to leave category blank -->
+            </select>
+        </div>
+
+        <!-- Title -->
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label fw-bold">Title</label>
             <input asp-for="Title" class="form-control" required />
-            <span asp-validation-for="Title" class="text-danger"></span>
         </div>
 
+        <!-- Year -->
         <div class="mb-3">
-            <label asp-for="Year" class="form-label fw-bold"></label>
+            <label asp-for="Year" class="form-label fw-bold">Year</label>
             <input asp-for="Year" class="form-control" type="number" min="1888" required />
-            <span asp-validation-for="Year" class="text-danger"></span>
         </div>
 
+        <!-- Director -->
         <div class="mb-3">
-            <label asp-for="Director" class="form-label fw-bold"></label>
-            <input asp-for="Director" class="form-control" required />
+            <label asp-for="Director" class="form-label fw-bold">Director</label>
+            <input asp-for="Director" class="form-control" />
         </div>
 
+        <!-- Rating -->
         <div class="mb-3">
-            <label asp-for="Rating" class="form-label fw-bold"></label>
-            <input asp-for="Rating" class="form-control" required />
+            <label asp-for="Rating" class="form-label fw-bold">Rating</label>
+            <input asp-for="Rating" class="form-control" />
         </div>
 
+        <!-- Edited Dropdown -->
         <div class="mb-3">
-            <label asp-for="Edited" class="form-label fw-bold"></label>
+            <label asp-for="Edited" class="form-label fw-bold">Edited</label>
             <select asp-for="Edited" class="form-control">
                 <option value="true">Yes</option>
                 <option value="false">No</option>
             </select>
         </div>
 
+        <!-- Lent To -->
         <div class="mb-3">
-            <label asp-for="LentTo" class="form-label fw-bold"></label>
+            <label asp-for="LentTo" class="form-label fw-bold">Lent To</label>
             <input asp-for="LentTo" class="form-control" />
         </div>
 
+        <!-- Copied to Plex Dropdown -->
         <div class="mb-3">
-            <label asp-for="CopiedToPlex" class="form-label fw-bold"></label>
+            <label asp-for="CopiedToPlex" class="form-label fw-bold">Copied to Plex</label>
             <select asp-for="CopiedToPlex" class="form-control">
                 <option value="true">Yes</option>
                 <option value="false">No</option>
             </select>
         </div>
 
+        <!-- Notes -->
         <div class="mb-3">
-            <label asp-for="Notes" class="form-label fw-bold"></label>
+            <label asp-for="Notes" class="form-label fw-bold">Notes</label>
             <textarea asp-for="Notes" class="form-control"></textarea>
         </div>
 
+        <!-- Submit & Cancel Buttons -->
         <button type="submit" class="btn btn-primary">Submit</button>
         <a asp-action="Index" class="btn btn-secondary">Cancel</a>
     </form>

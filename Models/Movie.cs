@@ -11,14 +11,17 @@ namespace Mission07_Keeney.Models
         public int MovieId { get; set; }
 
         [Column("CategoryId")]
-        public int? CategoryId { get; set; }
+        public int? CategoryId { get; set; } // 🔹 Nullable CategoryId
+
+        [ForeignKey("CategoryId")]
+        public Category? Category { get; set; }  // 🔹 Nullable Category Navigation Property
 
         [Required]
         [Column("Title")]
         public string Title { get; set; }
 
         [Required]
-        [Column("Year", TypeName = "INTEGER")]  // 🔹 Force EF to recognize Year as INTEGER
+        [Column("Year", TypeName = "INTEGER")]
         [Range(1888, 2100, ErrorMessage = "Year must be between 1888 and 2100.")]
         public int Year { get; set; }
 
